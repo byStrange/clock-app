@@ -18,13 +18,13 @@ function main() {
         }
         const d = new Date().getSeconds();
         o = d
-        $(`.cube__face--${types[index]}`).text(d ? d :  '0');
+        $(`.cube__face--${types[index]}`).text(d ? d : '0');
         $_cube.className = `cube show-${types[index]}`
         if (o == 1) {
             s()
         }
-        if ( k == 1) {
-        	d()
+        if (k == 1) {
+            d()
         }
     }, 1000)
 
