@@ -1,0 +1,67 @@
+function main() {
+
+    let types = ['front', 'left', 'right', 'top', 'front', 'back'],
+        index = 0,
+        i = 0,
+        a = 0,
+        o = 0,
+        k = 0
+    $(`.cube__face--${types[index]}`).text(new Date().getSeconds())
+    $(`.cube__face--${types[a]}`, 2).text(new Date().getHours() ? new Date().getHours() : '12');
+    $(`.cube__face--${types[i]}`, 1).text(new Date().getMinutes());
+
+
+    setInterval(me => {
+        index += 1;
+        if (index >= types.length) {
+            index = 0
+        }
+        const d = new Date().getSeconds();
+        o = d
+        $(`.cube__face--${types[index]}`).text(d ? d :  '0');
+        $_cube.className = `cube show-${types[index]}`
+        if (o == 1) {
+            s()
+        }
+        if ( k == 1) {
+        	d()
+        }
+    }, 1000)
+
+    function s() {
+        i += 1;
+        if (i >= types.length) {
+            i = 0
+        }
+        $(`.cube__face--${types[i]}`, 1).text(new Date().getMinutes());
+        $c2.className = `cube show-${types[i]}`
+        o = 0
+        k = new Date().getMinutes()
+    }
+
+    function d() {
+        a += 1;
+        if (a >= types.length) {
+            a = 0
+        }
+        const d = new Date().getHours();
+        $(`.cube__face--${types[a]}`, 2).text(d);
+        $c3.className = `cube show-${types[a]}`
+    }
+}
+main()
+// Entering editor mode (Ctrl+D to finish, Ctrl+C to cancel)
+var fs = require('fs'),
+    http = require('http');
+var __dirname = './Documents/GitHub/local/clock-app/index.html'
+http.createServer(function (req, res) {
+  fs.readFile(__dirname + req.url, function (err,data) {
+    if (err) {
+      res.writeHead(404);
+      res.end(JSON.stringify(err));
+      return;
+    }
+    res.writeHead(200);
+    res.end(data);
+  });
+}).listen(8080);

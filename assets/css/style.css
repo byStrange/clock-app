@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+body {
+    scroll-behavior: smooth;
+    overflow: hidden;
+}
+
+div.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.container section {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    height: 15vh;
+}
+
+div.container section div.clock-body {
+    width: 100%;
+    height: 100%;
+}
+
+div.clock-body {
+    width: 100%;
+    height: 100%;
+    /*animation: rotate 5s linear infinite;*/
+    perspective: 600px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+#hours {
+    transform-style: preserve-3d;
+    position: relative;
+    transform: translateZ(-100px);
+}
+
+
+#minutes {
+    transform: translateZ(-100px);
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+#seconds {
+    transform: translateZ(-100px);
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotateX(360deg);
+    }
+}
+
+.cube__face {
+    /*animation: rotate 5s linear infinite;*/
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 1px solid gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cube__face--front {
+    transform: rotateY(0deg);
+}
+
+.cube__face--right {
+    transform: rotateY(90deg);
+}
+
+.cube__face--back {
+    transform: rotateY(180deg);
+}
+
+.cube__face--left {
+    transform: rotateY(-90deg);
+}
+
+.cube__face--top {
+    transform: rotateX(90deg);
+}
+
+.cube__face--bottom {
+    transform: rotateX(-90deg);
+}
+
+.cube__face--front {
+    transform: rotateY(0deg) translateZ(100px);
+}
+
+.cube__face--right {
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+.cube__face--back {
+    transform: rotateY(180deg) translateZ(100px);
+}
+
+.cube__face--left {
+    transform: rotateY(-90deg) translateZ(100px);
+}
+
+.cube__face--top {
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+.cube__face--bottom {
+    transform: rotateX(-90deg) translateZ(100px);
+}
+
+
+.cube__face.active {
+    font-size: 5rem;
+}
+
+.scene {
+    width: 200px;
+    height: 200px;
+    perspective: 600px;
+}
+
+.cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: 350ms;
+    transform: translateZ(-100px);
+}
+
+.cube div {
+    font-size: 2.5rem;
+    background: rgba(25, 25, 25, .8);
+    color: #fff;
+    text-shadow: 0 0 15px cyan;
+}
+
+.cube__face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+}
+
+.cube.show-front {
+    transform: translateZ(-100px) rotateY(0deg);
+}
+
+.cube.show-right {
+    transform: translateZ(-100px) rotateY(-90deg);
+}
+
+.cube.show-back {
+    transform: translateZ(-100px) rotateY(-180deg);
+}
+
+.cube.show-left {
+    transform: translateZ(-100px) rotateY(90deg);
+}
+
+.cube.show-top {
+    transform: translateZ(-100px) rotateX(-90deg);
+}
+
+.cube.show-bottom {
+    transform: translateZ(-100px) rotateX(90deg);
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-width : 320px) 
+and (max-width : 480px) {
+	div.clock-body {
+		flex-direction: column-reverse;
+	}
+}
