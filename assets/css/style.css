@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-family: "Suggested 3d", "Helvetica Neue", Helvetica, sans-serif;
 }
 
 body {
@@ -143,7 +143,7 @@ div.clock-body {
 }
 
 .cube div {
-    font-size: 2.5rem;
+    font-size: 3rem;
     background: rgba(25, 25, 25, .8);
     color: #fff;
     text-shadow: 0 0 15px cyan;
