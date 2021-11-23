@@ -50,18 +50,3 @@ function main() {
     }
 }
 main()
-// Entering editor mode (Ctrl+D to finish, Ctrl+C to cancel)
-var fs = require('fs'),
-    http = require('http');
-var __dirname = './Documents/GitHub/local/clock-app/index.html'
-http.createServer(function (req, res) {
-  fs.readFile(__dirname + req.url, function (err,data) {
-    if (err) {
-      res.writeHead(404);
-      res.end(JSON.stringify(err));
-      return;
-    }
-    res.writeHead(200);
-    res.end(data);
-  });
-}).listen(8080);
