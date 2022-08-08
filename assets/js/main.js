@@ -1,3 +1,13 @@
+function $(a, b) {
+  var elem = document.querySelectorAll(a)[b];
+  if (a !== undefined && b !== undefined) {
+    return elem;
+  } else if (a !== undefined && b == undefined) {
+    return document.querySelector(a);
+  } else {
+    console.error(err("$", 2));
+  }
+}
 function main() {
 
     let types = ['front', 'left', 'right', 'top', 'front', 'back'],
