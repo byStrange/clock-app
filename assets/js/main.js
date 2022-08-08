@@ -1,11 +1,5 @@
-function $(a, b) {
-  var elem = document.querySelectorAll(a)[b];
-  if (a !== undefined && b !== undefined) {
-    return elem;
-  } else if (a !== undefined && b == undefined) {
-    return document.querySelector(a);
-  }
-}
+function $(e,o){var r=document.querySelectorAll(e)[o];return void 0!==e&&void 0!==o?r:void 0!==e&&null==o?document.querySelector(e):void 0}
+var $_cube = $('.cube') 
 function main() {
 
     let types = ['front', 'left', 'right', 'top', 'front', 'back'],
