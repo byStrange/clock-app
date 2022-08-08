@@ -4,8 +4,6 @@ function $(a, b) {
     return elem;
   } else if (a !== undefined && b == undefined) {
     return document.querySelector(a);
-  } else {
-    console.error(err("$", 2));
   }
 }
 function main() {
@@ -16,9 +14,9 @@ function main() {
         a = 0,
         o = 0,
         k = 0
-    $(`.cube__face--${types[index]}`).text(new Date().getSeconds())
-    $(`.cube__face--${types[a]}`, 2).text(new Date().getHours() ? new Date().getHours() : '12');
-    $(`.cube__face--${types[i]}`, 1).text(new Date().getMinutes());
+    $(`.cube__face--${types[index]}`).innerText = (new Date().getSeconds())
+    $(`.cube__face--${types[a]}`, 2).innerText = (new Date().getHours() ? new Date().getHours() : '12');
+    $(`.cube__face--${types[i]}`, 1).innerText = (new Date().getMinutes());
 
 
     setInterval(me => {
