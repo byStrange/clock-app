@@ -1,5 +1,5 @@
 function $(e,o){var r=document.querySelectorAll(e)[o];return void 0!==e&&void 0!==o?r:void 0!==e&&null==o?document.querySelector(e):void 0}
-var $_cube = $('.cube') 
+var $_cube = $('.cube'), c2 = $('#c2'), c3 = $('#c3')
 function main() {
 
     let types = ['front', 'left', 'right', 'top', 'front', 'back'],
