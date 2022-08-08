@@ -26,7 +26,7 @@ function main() {
         }
         const d = new Date().getSeconds();
         o = d
-        $(`.cube__face--${types[index]}`).text(d ? d : '0');
+        $(`.cube__face--${types[index]}`).innerText(d ? d : '0');
         $_cube.className = `cube show-${types[index]}`
         if (o == 1) {
             s()
@@ -41,7 +41,7 @@ function main() {
         if (i >= types.length) {
             i = 0
         }
-        $(`.cube__face--${types[i]}`, 1).text(new Date().getMinutes());
+        $(`.cube__face--${types[i]}`, 1).innerText = (new Date().getMinutes());
         $c2.className = `cube show-${types[i]}`
         o = 0
         k = new Date().getMinutes()
@@ -53,7 +53,7 @@ function main() {
             a = 0
         }
         const d = new Date().getHours();
-        $(`.cube__face--${types[a]}`, 2).text(d);
+        $(`.cube__face--${types[a]}`, 2).innerText(d);
         $c3.className = `cube show-${types[a]}`
     }
 }
